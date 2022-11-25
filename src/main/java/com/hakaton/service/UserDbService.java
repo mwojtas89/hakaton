@@ -5,6 +5,8 @@ import com.hakaton.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserDbService {
@@ -13,6 +15,10 @@ public class UserDbService {
 
     public User saveUser (User user) {
         return userRepository.save(user);
+    }
+
+    public List<User> getByLocation (String location) {
+        return userRepository.getByLocation(location);
     }
 
 }

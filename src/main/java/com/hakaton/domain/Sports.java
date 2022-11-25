@@ -21,4 +21,9 @@ public class Sports {
     @Column(name = "sport_name")
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+
 }
