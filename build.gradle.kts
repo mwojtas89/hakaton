@@ -27,6 +27,12 @@ dependencies {
     runtimeOnly("com.mysql:mysql-connector-j")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    runtimeOnly ("com.h2database:h2")
+    runtimeOnly ("org.postgresql:postgresql")
+    runtimeOnly ("mysql:mysql-connector-java")
+
+
 }
 
 tasks.withType<Test> {
