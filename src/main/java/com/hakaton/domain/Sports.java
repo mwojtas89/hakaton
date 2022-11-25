@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.annotation.processing.Generated;
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,9 +22,13 @@ public class Sports {
     @Column(name = "sport_name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @ManyToMany
+    @JoinTable(
+            name = "JOIN_USER_SPORT",
+            joinColumns = {@JoinColumn(name = "user", referencedColumnName = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "sport", referencedColumnName = "sport_id")}
+    )
+    private List<User> userList;
 
 
 }

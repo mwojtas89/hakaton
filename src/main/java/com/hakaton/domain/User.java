@@ -52,6 +52,6 @@ public class User {
     @Column(name = "picture_storage")
     private String pictureUrl;
 
-    @OneToMany(targetEntity = Sports.class, mappedBy = "user")
+    @ManyToMany
     private List<Sports> sportsList;
 }

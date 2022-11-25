@@ -24,5 +24,4 @@ public class UserController {
         List<User> usersFromDb = userDbService.getByLocation(localization);
         return ResponseEntity.ok(userMapper.mapToListUserDto(usersFromDb));
     }
-
 }
